@@ -126,3 +126,4 @@ D:\study\KTITS\uchebka\Parking_Api\Parking_Api\obj\Debug\net8.0\refint\Parking_A
 D:\study\KTITS\uchebka\Parking_Api\Parking_Api\obj\Debug\net8.0\Parking_Api.pdb
 D:\study\KTITS\uchebka\Parking_Api\Parking_Api\obj\Debug\net8.0\Parking_Api.genruntimeconfig.cache
 D:\study\KTITS\uchebka\Parking_Api\Parking_Api\obj\Debug\net8.0\ref\Parking_Api.dll
+D:\study\KTITS\uchebka\Parking_Api\Parking_Api\obj\Debug\net8.0\Parking_Api.sourcelink.json
