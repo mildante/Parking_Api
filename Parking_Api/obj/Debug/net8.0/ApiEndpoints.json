@@ -1,0 +1,534 @@
+[
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "AuthByToken",
+    "RelativePath": "authByToken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "AuthUser",
+    "RelativePath": "authUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authModel",
+        "Type": "Parking_Api.Requests.UserRequest\u002BAuthUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "CloseSession",
+    "RelativePath": "closeSession/{session_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.CarController",
+    "Method": "CreateCar",
+    "RelativePath": "createCar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carModel",
+        "Type": "Parking_Api.Models.Models\u002BCarModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "CreateComplex",
+    "RelativePath": "createComplex",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complexModel",
+        "Type": "Parking_Api.Models.Models\u002BParkingComplexModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "CreatePlan",
+    "RelativePath": "createPlan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "planModel",
+        "Type": "Parking_Api.Models.Models\u002BSubscriptionPlanModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "CreateSession",
+    "RelativePath": "createSession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionModel",
+        "Type": "Parking_Api.Models.Models\u002BParkingSessionModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "CreateSpot",
+    "RelativePath": "createSpot",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "spotModel",
+        "Type": "Parking_Api.Models.Models\u002BParkingSpotModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "CreateSubscription",
+    "RelativePath": "createSubscription",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subscriptionModel",
+        "Type": "Parking_Api.Models.Models\u002BSubscriptionModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.CarController",
+    "Method": "DeleteCar",
+    "RelativePath": "deleteCar/{car_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "car_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "DeleteComplex",
+    "RelativePath": "deleteComplex/{complex_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complex_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "DeletePlan",
+    "RelativePath": "deletePlan/{plan_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "plan_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "DeleteSession",
+    "RelativePath": "deleteSession/{session_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "DeleteSpot",
+    "RelativePath": "deleteSpot/{spot_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "spot_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "DeleteSubscription",
+    "RelativePath": "deleteSubscription/{subscription_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subscription_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "deleteUser/{user_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "GetActiveSessions",
+    "RelativePath": "getActiveSessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.CarController",
+    "Method": "GetAllCars",
+    "RelativePath": "getAllCars",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "GetAllComplexes",
+    "RelativePath": "getAllComplexes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "GetAllPlans",
+    "RelativePath": "getAllPlans",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "GetAllSessions",
+    "RelativePath": "getAllSessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "GetAllSpots",
+    "RelativePath": "getAllSpots",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "GetAllSubscriptions",
+    "RelativePath": "getAllSubscriptions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "getAllUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.CarController",
+    "Method": "GetCarsByUser",
+    "RelativePath": "getCarsByUser/{user_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "GetPlansByComplex",
+    "RelativePath": "getPlansByComplex/{complex_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complex_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "GetSessionsByUser",
+    "RelativePath": "getSessionsByUser/{user_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "GetSpotsByComplex",
+    "RelativePath": "getSpotsByComplex/{complex_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complex_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "GetSubscriptionsByUser",
+    "RelativePath": "getSubscriptionsByUser/{user_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "RegistrationUser",
+    "RelativePath": "registrationUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userModel",
+        "Type": "Parking_Api.Requests.UserRequest\u002BUserModelRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.CarController",
+    "Method": "UpdateCar",
+    "RelativePath": "updateCar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carModel",
+        "Type": "Parking_Api.Models.Models\u002BCarModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "UpdateComplex",
+    "RelativePath": "updateComplex",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complexModel",
+        "Type": "Parking_Api.Models.Models\u002BParkingComplexModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "UpdatePlan",
+    "RelativePath": "updatePlan",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "planModel",
+        "Type": "Parking_Api.Models.Models\u002BSubscriptionPlanModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.ParkingController",
+    "Method": "UpdateSpotStatus",
+    "RelativePath": "updateSpotStatus/{spot_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "spot_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
+    "Method": "UpdateSubscriptionStatus",
+    "RelativePath": "updateSubscriptionStatus/{subscription_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subscription_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Parking_Api.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "updateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userModel",
+        "Type": "Parking_Api.Requests.UserRequest\u002BUserModelRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
