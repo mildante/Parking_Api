@@ -96,7 +96,7 @@ namespace Parking_Api.Services
             {
                 status = true,
                 token,
-                user = user,
+                user,
                 message = "Вход выполнен"
             });
         }

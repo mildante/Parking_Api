@@ -15,7 +15,6 @@ namespace Parking_Api.Controllers
             _userService = userService;
         }
 
-        [Authorize]
         [HttpGet("authByToken")]
         public async Task<IActionResult> AuthByToken()
         {
