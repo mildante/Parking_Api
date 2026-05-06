@@ -7,22 +7,14 @@ namespace Parking_Api.Services
 {
     public class SubscriptionService : ISubscriptionService
     {
+        private const string ActiveSubscriptionStatus = "Активно";
+        private const string FinishedSubscriptionStatus = "Окончено";
+
         private readonly ContextDb _ContextDb;
 
         public SubscriptionService(ContextDb ContextDb)
         {
             _ContextDb = ContextDb;
-        }
-
-        public async Task<IActionResult> GetAllPlans()
-        {
-            var list = await _ContextDb.SubscriptionPlans.Include(x => x.parkingComplex).ToListAsync();
-
-            return new OkObjectResult(new
-            {
-                status = true,
-                list
-            });
         }
 
         public async Task<IActionResult> GetPlansByComplex(int complex_id)
@@ -97,10 +89,6 @@ namespace Parking_Api.Services
             });
         }
 
-
-
-
-
         public async Task<IActionResult> GetAllSubscriptions()
         {
             var list = await _ContextDb.Subscriptions.Include(x => x.user).Include(x => x.subscriptionPlan).ThenInclude(x => x.parkingComplex).ToListAsync();
@@ -125,21 +113,56 @@ namespace Parking_Api.Services
 
         public async Task<IActionResult> CreateSubscription(SubscriptionModel subscriptionModel)
         {
-            var user = await _ContextDb.Users
-                .FirstOrDefaultAsync(x => x.id_user == subscriptionModel.user_id);
+            var today = DateOnly.FromDateTime(DateTime.Now);
+
+            var user = await _ContextDb.Users.FirstOrDefaultAsync(x => x.id_user == subscriptionModel.user_id);
 
             if (user == null)
                 return new OkObjectResult(new { status = false, message = "Пользователь не найден" });
 
-            var plan = await _ContextDb.SubscriptionPlans
-                .FirstOrDefaultAsync(x => x.id_plan == subscriptionModel.subscription_plan_id);
+            var plan = await _ContextDb.SubscriptionPlans.FirstOrDefaultAsync(x => x.id_plan == subscriptionModel.subscription_plan_id);
 
             if (plan == null)
                 return new OkObjectResult(new { status = false, message = "Тариф абонемента не найден" });
 
-            subscriptionModel.start_date = DateOnly.FromDateTime(DateTime.Now);
+            var existingSubscriptions = await _ContextDb.Subscriptions
+                .Include(x => x.subscriptionPlan)
+                .Where(x => x.user_id == subscriptionModel.user_id
+                    && x.subscriptionPlan != null
+                    && x.subscriptionPlan.parking_complex_id == plan.parking_complex_id
+                    && x.end_date >= today
+                    && x.status == ActiveSubscriptionStatus)
+                .OrderByDescending(x => x.end_date)
+                .ToListAsync();
+
+            var existingSubscription = existingSubscriptions.FirstOrDefault();
+
+            if (existingSubscription != null)
+            {
+                existingSubscription.end_date = existingSubscription.end_date.AddDays(plan.duration_days);
+                existingSubscription.status = ActiveSubscriptionStatus;
+
+                foreach (var duplicate in existingSubscriptions.Where(x => x.id_subscription != existingSubscription.id_subscription))
+                    duplicate.status = FinishedSubscriptionStatus;
+
+                _ContextDb.Subscriptions.Update(existingSubscription);
+                _ContextDb.Subscriptions.UpdateRange(existingSubscriptions.Where(x => x.id_subscription != existingSubscription.id_subscription));
+                await _ContextDb.SaveChangesAsync();
+
+                existingSubscription.user = null;
+                existingSubscription.subscriptionPlan = null;
+
+                return new OkObjectResult(new
+                {
+                    status = true,
+                    message = $"Абонемент продлен до {existingSubscription.end_date:dd.MM.yyyy}",
+                    subscription = existingSubscription
+                });
+            }
+
+            subscriptionModel.start_date = today;
             subscriptionModel.end_date = subscriptionModel.start_date.AddDays(plan.duration_days);
-            subscriptionModel.status = "Активная";
+            subscriptionModel.status = ActiveSubscriptionStatus;
 
             subscriptionModel.user = null;
             subscriptionModel.subscriptionPlan = null;
@@ -155,45 +178,5 @@ namespace Parking_Api.Services
             });
         }
 
-        public async Task<IActionResult> UpdateSubscriptionStatus(int subscription_id, string status)
-        {
-            var subscription = await _ContextDb.Subscriptions
-                .FirstOrDefaultAsync(x => x.id_subscription == subscription_id);
-
-            if (subscription == null)
-                return new OkObjectResult(new { status = false, message = "Абонемент не найден" });
-
-            if (status != "Активен" && status != "Окончен")
-                return new OkObjectResult(new { status = false, message = "Некорректный статус абонемента" });
-
-            subscription.status = status;
-
-            _ContextDb.Subscriptions.Update(subscription);
-            await _ContextDb.SaveChangesAsync();
-
-            return new OkObjectResult(new
-            {
-                status = true,
-                message = "Статус абонемента обновлен"
-            });
-        }
-
-        public async Task<IActionResult> DeleteSubscription(int subscription_id)
-        {
-            var subscription = await _ContextDb.Subscriptions
-                .FirstOrDefaultAsync(x => x.id_subscription == subscription_id);
-
-            if (subscription == null)
-                return new OkObjectResult(new { status = false, message = "Абонемент не найден" });
-
-            _ContextDb.Subscriptions.Remove(subscription);
-            await _ContextDb.SaveChangesAsync();
-
-            return new OkObjectResult(new
-            {
-                status = true,
-                message = "Абонемент удален"
-            });
-        }
     }
 }

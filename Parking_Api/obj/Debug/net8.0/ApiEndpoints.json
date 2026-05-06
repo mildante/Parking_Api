@@ -74,6 +74,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
+    "Method": "CreateGuestSession",
+    "RelativePath": "createGuestSession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionModel",
+        "Type": "Parking_Api.Requests.ParkingSessionRequest\u002BGuestSessionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Parking_Api.Controllers.SubscriptionController",
     "Method": "CreatePlan",
     "RelativePath": "createPlan",
@@ -99,7 +115,7 @@
     "Parameters": [
       {
         "Name": "sessionModel",
-        "Type": "Parking_Api.Models.Models\u002BParkingSessionModel",
+        "Type": "Parking_Api.Requests.ParkingSessionRequest\u002BCreateSessionRequest",
         "IsRequired": true
       }
     ],
@@ -186,22 +202,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
-    "Method": "DeleteSession",
-    "RelativePath": "deleteSession/{session_id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "session_id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Parking_Api.Controllers.ParkingController",
     "Method": "DeleteSpot",
     "RelativePath": "deleteSpot/{spot_id}",
@@ -211,22 +211,6 @@
     "Parameters": [
       {
         "Name": "spot_id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
-    "Method": "DeleteSubscription",
-    "RelativePath": "deleteSubscription/{subscription_id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "subscription_id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -260,6 +244,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Parking_Api.Controllers.ReportController",
+    "Method": "GetAdminReport",
+    "RelativePath": "getAdminReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Parking_Api.Controllers.CarController",
     "Method": "GetAllCars",
     "RelativePath": "getAllCars",
@@ -280,29 +280,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
-    "Method": "GetAllPlans",
-    "RelativePath": "getAllPlans",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Parking_Api.Controllers.ParkingSessionController",
     "Method": "GetAllSessions",
     "RelativePath": "getAllSessions",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Parking_Api.Controllers.ParkingController",
-    "Method": "GetAllSpots",
-    "RelativePath": "getAllSpots",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -483,27 +463,6 @@
     "Parameters": [
       {
         "Name": "spot_id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "status",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Parking_Api.Controllers.SubscriptionController",
-    "Method": "UpdateSubscriptionStatus",
-    "RelativePath": "updateSubscriptionStatus/{subscription_id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "subscription_id",
         "Type": "System.Int32",
         "IsRequired": true
       },

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\study\\KTITS\\uchebka\\Parking_Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\services\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\services\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +29,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\hubs\\parkinghub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\hubs\\parkinghub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|d:\\study\\ktits\\uchebka\\parking_api\\parking_api\\services\\parkingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C93F659-B0BE-ED99-0F9C-796289F552DD}|Parking_Api\\Parking_Api.csproj|solutionrelative:parking_api\\services\\parkingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,48 +42,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Parking_Api\\Services\\UserService.cs",
-              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\UserService.cs",
-              "RelativeToolTip": "Parking_Api\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:50:01.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Program.cs",
               "RelativeDocumentMoniker": "Parking_Api\\Program.cs",
-              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Program.cs",
-              "RelativeToolTip": "Parking_Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Program.cs*",
+              "RelativeToolTip": "Parking_Api\\Program.cs*",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T05:36:37.53Z"
+              "WhenOpened": "2026-05-06T09:18:36.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "SubscriptionService.cs",
+              "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\SubscriptionService.cs",
+              "RelativeDocumentMoniker": "Parking_Api\\Services\\SubscriptionService.cs",
+              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\SubscriptionService.cs",
+              "RelativeToolTip": "Parking_Api\\Services\\SubscriptionService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA3wLQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T08:06:04.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ParkingSessionService.cs",
+              "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\ParkingSessionService.cs",
+              "RelativeDocumentMoniker": "Parking_Api\\Services\\ParkingSessionService.cs",
+              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\ParkingSessionService.cs",
+              "RelativeToolTip": "Parking_Api\\Services\\ParkingSessionService.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAIwCkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T07:24:59.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarService.cs",
+              "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\CarService.cs",
+              "RelativeDocumentMoniker": "Parking_Api\\Services\\CarService.cs",
+              "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Services\\CarService.cs",
+              "RelativeToolTip": "Parking_Api\\Services\\CarService.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAowF8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T07:21:42.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Parking_Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "Parking_Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T05:36:27.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T05:36:27.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Parking_Api\\Interfaces\\IUserService.cs",
@@ -87,25 +120,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ParkingHub.cs",
               "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Hubs\\ParkingHub.cs",
               "RelativeDocumentMoniker": "Parking_Api\\Hubs\\ParkingHub.cs",
               "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Hubs\\ParkingHub.cs",
               "RelativeToolTip": "Parking_Api\\Hubs\\ParkingHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAIwFUAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-28T05:22:16.981Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Models.cs",
               "DocumentMoniker": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Models\\Models.cs",
               "RelativeDocumentMoniker": "Parking_Api\\Models\\Models.cs",
               "ToolTip": "D:\\study\\KTITS\\uchebka\\Parking_Api\\Parking_Api\\Models\\Models.cs",
               "RelativeToolTip": "Parking_Api\\Models\\Models.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAiwJ0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T13:22:28.743Z"
             }

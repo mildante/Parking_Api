@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Parking_Api.Data;
+using Parking_Api.Hubs;
 using Parking_Api.Interfaces;
 using Parking_Api.Services;
 using System.Text;
@@ -12,20 +13,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR();
 
 builder.Services.AddDbContext<ContextDb>(
     option => option.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")),
     ServiceLifetime.Scoped
 );
 
-builder.Services.Configure<YooKassaOptions>(
-    builder.Configuration.GetSection("YooKassa"));
-
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<IParkingService, ParkingService>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
 builder.Services.AddScoped<IParkingSessionService, ParkingSessionService>();
+builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddHostedService<ParkingNotificationService>();
+
 
 var key = Encoding.UTF8.GetBytes("BRHejG4XOmf4iskeung1DvU4aLuN9QLHlxowUA6XWV8Qs5YvRcWCnjhezcK4Bijt");
 
@@ -64,5 +66,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<ParkingHub>("/parkingHub");
 
 app.Run();

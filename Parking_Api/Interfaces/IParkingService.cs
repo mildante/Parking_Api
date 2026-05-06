@@ -10,7 +10,6 @@ namespace Parking_Api.Services
         Task<IActionResult> UpdateComplex(ParkingComplexModel complexModel);
         Task<IActionResult> DeleteComplex(int complex_id);
 
-        Task<IActionResult> GetAllSpots();
         Task<IActionResult> GetSpotsByComplex(int complex_id);
         Task<IActionResult> CreateSpot(ParkingSpotModel spotModel);
         Task<IActionResult> UpdateSpotStatus(int spot_id, string status);

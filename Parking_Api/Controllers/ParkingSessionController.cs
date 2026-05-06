@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Parking_Api.Services;
-using static Parking_Api.Models.Models;
+using static Parking_Api.Requests.ParkingSessionRequest;
 
 namespace Parking_Api.Controllers
 {
@@ -32,9 +32,15 @@ namespace Parking_Api.Controllers
         }
 
         [HttpPost("createSession")]
-        public async Task<IActionResult> CreateSession([FromBody] ParkingSessionModel sessionModel)
+        public async Task<IActionResult> CreateSession([FromBody] CreateSessionRequest sessionModel)
         {
             return await _parkingSessionService.CreateSession(sessionModel);
+        }
+
+        [HttpPost("createGuestSession")]
+        public async Task<IActionResult> CreateGuestSession([FromBody] GuestSessionRequest sessionModel)
+        {
+            return await _parkingSessionService.CreateGuestSession(sessionModel);
         }
 
         [HttpPut("closeSession/{session_id}")]
@@ -43,10 +49,5 @@ namespace Parking_Api.Controllers
             return await _parkingSessionService.CloseSession(session_id);
         }
 
-        [HttpDelete("deleteSession/{session_id}")]
-        public async Task<IActionResult> DeleteSession(int session_id)
-        {
-            return await _parkingSessionService.DeleteSession(session_id);
-        }
     }
 }

@@ -67,13 +67,22 @@ namespace Parking_Api.Services
             var isEmailNotUnique = await _ContextDb.Users.AnyAsync(x => x.email == userModel.email);
             if (isEmailNotUnique)
                 return new OkObjectResult(new { status = false, message = "Почта уже зарегистрирована" });
-            var isPhoneNotUnique = await _ContextDb.Users.AnyAsync(x => x.email == userModel.email);
+
+            var isPhoneNotUnique = await _ContextDb.Users.AnyAsync(x => x.phone == userModel.phone);
             if (isPhoneNotUnique)
                 return new OkObjectResult(new { status = false, message = "Телефон уже занят" });
 
-            userModel.role_id = 4;
+            var user = new UserModel
+            {
+                name = userModel.name,
+                surname = userModel.surname,
+                email = userModel.email,
+                phone = userModel.phone,
+                password = userModel.password,
+                role_id = 3
+            };
 
-            await _ContextDb.AddAsync(userModel);
+            await _ContextDb.Users.AddAsync(user);
             await _ContextDb.SaveChangesAsync();
 
             return new OkObjectResult(new
@@ -143,7 +152,7 @@ namespace Parking_Api.Services
         }
         public async Task<IActionResult> GetAllUser()
         {
-            var listUser = await _ContextDb.Users.Where(x => x.role_id == 4).ToListAsync();
+            var listUser = await _ContextDb.Users.Where(x => x.role_id == 3).ToListAsync();
 
             return new OkObjectResult(new
             {

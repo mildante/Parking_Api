@@ -222,18 +222,6 @@
         }
       }
     },
-    "/getAllSpots": {
-      "get": {
-        "tags": [
-          "Parking"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/getSpotsByComplex/{complex_id}": {
       "get": {
         "tags": [
@@ -409,17 +397,48 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingSessionModel"
+                "$ref": "#/components/schemas/CreateSessionRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingSessionModel"
+                "$ref": "#/components/schemas/CreateSessionRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingSessionModel"
+                "$ref": "#/components/schemas/CreateSessionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/createGuestSession": {
+      "post": {
+        "tags": [
+          "ParkingSession"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuestSessionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuestSessionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuestSessionRequest"
               }
             }
           }
@@ -454,33 +473,21 @@
         }
       }
     },
-    "/deleteSession/{session_id}": {
-      "delete": {
+    "/getAdminReport": {
+      "get": {
         "tags": [
-          "ParkingSession"
+          "Report"
         ],
         "parameters": [
           {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
+            "name": "days",
+            "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int32",
+              "default": 30
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/getAllPlans": {
-      "get": {
-        "tags": [
-          "Subscription"
         ],
         "responses": {
           "200": {
@@ -656,71 +663,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/updateSubscriptionStatus/{subscription_id}": {
-      "put": {
-        "tags": [
-          "Subscription"
-        ],
-        "parameters": [
-          {
-            "name": "subscription_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/deleteSubscription/{subscription_id}": {
-      "delete": {
-        "tags": [
-          "Subscription"
-        ],
-        "parameters": [
-          {
-            "name": "subscription_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -914,13 +856,59 @@
           },
           "user": {
             "$ref": "#/components/schemas/UserModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSessionRequest": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "format": "int32"
           },
-          "parkingSessions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSessionModel"
-            },
+          "car_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parking_complex_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parking_spot_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subscription_id": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuestSessionRequest": {
+        "type": "object",
+        "properties": {
+          "license_plate": {
+            "type": "string",
+            "nullable": true
+          },
+          "parking_complex_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parking_spot_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -943,86 +931,6 @@
           "total_spots": {
             "type": "integer",
             "format": "int32"
-          },
-          "spots": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSpotModel"
-            },
-            "nullable": true
-          },
-          "subscriptionPlans": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionPlanModel"
-            },
-            "nullable": true
-          },
-          "parkingSessions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSessionModel"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ParkingSessionModel": {
-        "type": "object",
-        "properties": {
-          "id_session": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "user_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "user": {
-            "$ref": "#/components/schemas/UserModel"
-          },
-          "car_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "car": {
-            "$ref": "#/components/schemas/CarModel"
-          },
-          "parking_complex_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "parkingComplex": {
-            "$ref": "#/components/schemas/ParkingComplexModel"
-          },
-          "parking_spot_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "parkingSpot": {
-            "$ref": "#/components/schemas/ParkingSpotModel"
-          },
-          "subscription_id": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "subscription": {
-            "$ref": "#/components/schemas/SubscriptionModel"
-          },
-          "entry_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "exit_time": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1048,13 +956,6 @@
           },
           "parkingComplex": {
             "$ref": "#/components/schemas/ParkingComplexModel"
-          },
-          "parkingSessions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSessionModel"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1091,13 +992,6 @@
           "status": {
             "type": "string",
             "nullable": true
-          },
-          "parkingSessions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSessionModel"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1127,13 +1021,6 @@
           },
           "parkingComplex": {
             "$ref": "#/components/schemas/ParkingComplexModel"
-          },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionModel"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1168,27 +1055,6 @@
           "role_id": {
             "type": "integer",
             "format": "int32"
-          },
-          "cars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CarModel"
-            },
-            "nullable": true
-          },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionModel"
-            },
-            "nullable": true
-          },
-          "parkingSessions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingSessionModel"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

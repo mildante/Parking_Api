@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using static Parking_Api.Models.Models;
+using Microsoft.AspNetCore.Mvc;
+using static Parking_Api.Requests.ParkingSessionRequest;
 
 namespace Parking_Api.Services
 {
@@ -9,8 +9,8 @@ namespace Parking_Api.Services
         Task<IActionResult> GetSessionsByUser(int user_id);
         Task<IActionResult> GetActiveSessions();
 
-        Task<IActionResult> CreateSession(ParkingSessionModel sessionModel);
+        Task<IActionResult> CreateSession(CreateSessionRequest sessionModel);
+        Task<IActionResult> CreateGuestSession(GuestSessionRequest sessionModel);
         Task<IActionResult> CloseSession(int session_id);
-        Task<IActionResult> DeleteSession(int session_id);
     }
 }

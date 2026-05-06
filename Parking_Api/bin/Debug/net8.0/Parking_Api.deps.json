@@ -13,8 +13,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.26",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.26",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.11",
-          "Swashbuckle.AspNetCore": "6.6.2",
-          "Yandex.Checkout.V3": "4.3.1"
+          "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
           "Parking_Api.dll": {}
@@ -54,7 +53,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Http": "2.3.0",
-          "Newtonsoft.Json": "13.0.2",
+          "Newtonsoft.Json": "11.0.2",
           "System.Net.WebSockets.WebSocketProtocol": "5.1.0"
         }
       },
@@ -526,11 +525,11 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.2": {
+      "Newtonsoft.Json/11.0.2": {
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.2.27524"
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
           }
         }
       },
@@ -681,18 +680,6 @@
           "lib/net6.0/System.Net.WebSockets.WebSocketProtocol.dll": {
             "assemblyVersion": "5.1.0.0",
             "fileVersion": "5.100.24.56208"
-          }
-        }
-      },
-      "Yandex.Checkout.V3/4.3.1": {
-        "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
-          "Newtonsoft.Json": "13.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Yandex.Checkout.V3.dll": {
-            "assemblyVersion": "4.3.1.0",
-            "fileVersion": "4.3.1.0"
           }
         }
       }
@@ -942,12 +929,12 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.2": {
+    "Newtonsoft.Json/11.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
-      "path": "newtonsoft.json/13.0.2",
-      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
     "Npgsql/8.0.6": {
       "type": "package",
@@ -1053,13 +1040,6 @@
       "sha512": "sha512-cVTT/Zw4JuUeX8H0tdWii0OMHsA5MY2PaFYOq/Hstw0jk479jZ+f8baCicWFNzJlCPWAe0uoNCELoB5eNmaMqA==",
       "path": "system.net.websockets.websocketprotocol/5.1.0",
       "hashPath": "system.net.websockets.websocketprotocol.5.1.0.nupkg.sha512"
-    },
-    "Yandex.Checkout.V3/4.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7Th77uiLUNQddIA3Ww9nMXlmQGPIhrPekKT/pF20WwNDP8PgRTTQ+CDwyH2UOcL2inyrRovDL0NOs71aZLv8Dg==",
-      "path": "yandex.checkout.v3/4.3.1",
-      "hashPath": "yandex.checkout.v3.4.3.1.nupkg.sha512"
     }
   }
 }

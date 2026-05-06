@@ -13,12 +13,6 @@ namespace Parking_Api.Controllers
             _subscriptionService = subscriptionService;
         }
 
-        [HttpGet("getAllPlans")]
-        public async Task<IActionResult> GetAllPlans()
-        {
-            return await _subscriptionService.GetAllPlans();
-        }
-
         [HttpGet("getPlansByComplex/{complex_id}")]
         public async Task<IActionResult> GetPlansByComplex(int complex_id)
         {
@@ -61,16 +55,5 @@ namespace Parking_Api.Controllers
             return await _subscriptionService.CreateSubscription(subscriptionModel);
         }
 
-        [HttpPut("updateSubscriptionStatus/{subscription_id}")]
-        public async Task<IActionResult> UpdateSubscriptionStatus(int subscription_id, [FromBody] string status)
-        {
-            return await _subscriptionService.UpdateSubscriptionStatus(subscription_id, status);
-        }
-
-        [HttpDelete("deleteSubscription/{subscription_id}")]
-        public async Task<IActionResult> DeleteSubscription(int subscription_id)
-        {
-            return await _subscriptionService.DeleteSubscription(subscription_id);
-        }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Data;
-using System.Numerics;
-using Yandex.Checkout.V3;
 using static Parking_Api.Models.Models;
 
 namespace Parking_Api.Data

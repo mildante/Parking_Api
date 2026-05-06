@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Parking_Api.Models
 {
@@ -17,8 +18,11 @@ namespace Parking_Api.Models
             public string password { get; set; }
             public int role_id { get; set; }
 
+            [JsonIgnore]
             public ICollection<CarModel> cars { get; set; } = new List<CarModel>();
+            [JsonIgnore]
             public ICollection<SubscriptionModel> subscriptions { get; set; } = new List<SubscriptionModel>();
+            [JsonIgnore]
             public ICollection<ParkingSessionModel> parkingSessions { get; set; } = new List<ParkingSessionModel>();
         }
 
@@ -37,6 +41,7 @@ namespace Parking_Api.Models
 
             public UserModel? user { get; set; }
 
+            [JsonIgnore]
             public ICollection<ParkingSessionModel> parkingSessions { get; set; } = new List<ParkingSessionModel>();
         }
 
@@ -49,8 +54,11 @@ namespace Parking_Api.Models
             public string address { get; set; }
             public int total_spots { get; set; }
 
+            [JsonIgnore]
             public ICollection<ParkingSpotModel> spots { get; set; } = new List<ParkingSpotModel>();
+            [JsonIgnore]
             public ICollection<SubscriptionPlanModel> subscriptionPlans { get; set; } = new List<SubscriptionPlanModel>();
+            [JsonIgnore]
             public ICollection<ParkingSessionModel> parkingSessions { get; set; } = new List<ParkingSessionModel>();
         }
 
@@ -67,6 +75,7 @@ namespace Parking_Api.Models
 
             public ParkingComplexModel? parkingComplex { get; set; }
 
+            [JsonIgnore]
             public ICollection<ParkingSessionModel> parkingSessions { get; set; } = new List<ParkingSessionModel>();
         }
 
@@ -84,6 +93,7 @@ namespace Parking_Api.Models
 
             public ParkingComplexModel? parkingComplex { get; set; }
 
+            [JsonIgnore]
             public ICollection<SubscriptionModel> subscriptions { get; set; } = new List<SubscriptionModel>();
         }
 
@@ -105,8 +115,9 @@ namespace Parking_Api.Models
             public DateOnly start_date { get; set; }
             public DateOnly end_date { get; set; }
 
-            public string status { get; set; } = "active";
+            public string status { get; set; } = "Активно";
 
+            [JsonIgnore]
             public ICollection<ParkingSessionModel> parkingSessions { get; set; } = new List<ParkingSessionModel>();
         }
 
@@ -143,14 +154,7 @@ namespace Parking_Api.Models
             public DateTime entry_time { get; set; }
             public DateTime? exit_time { get; set; }
 
-            public string status { get; set; } = "Занято";
-        }
-
-        public class YooKassaOptions
-        {
-            public string ShopId { get; set; } = "";
-            public string SecretKey { get; set; } = "";
-            public string ReturnUrl { get; set; } = "";
+            public string status { get; set; } = "Активна";
         }
     }
 }

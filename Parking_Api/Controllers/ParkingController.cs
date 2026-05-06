@@ -37,12 +37,6 @@ namespace Parking_Api.Controllers
             return await _parkingService.DeleteComplex(complex_id);
         }
 
-        [HttpGet("getAllSpots")]
-        public async Task<IActionResult> GetAllSpots()
-        {
-            return await _parkingService.GetAllSpots();
-        }
-
         [HttpGet("getSpotsByComplex/{complex_id}")]
         public async Task<IActionResult> GetSpotsByComplex(int complex_id)
         {

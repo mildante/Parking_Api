@@ -39,6 +39,14 @@ namespace Parking_Api.Services
 
         public async Task<IActionResult> CreateCar(CarModel carModel)
         {
+            carModel.license_plate = carModel.license_plate?.Trim();
+            carModel.brand = carModel.brand?.Trim();
+            carModel.model = carModel.model?.Trim();
+            carModel.color = carModel.color?.Trim();
+
+            if (string.IsNullOrWhiteSpace(carModel.license_plate))
+                return new OkObjectResult(new { status = false, message = "Введите гос. номер машины" });
+
             var user = await _ContextDb.Users.FirstOrDefaultAsync(x => x.id_user == carModel.user_id);
 
             if (user == null)
@@ -49,6 +57,9 @@ namespace Parking_Api.Services
             if (isPlateNotUnique)
                 return new OkObjectResult(new { status = false, message = "Машина с таким номером уже добавлена" });
 
+            carModel.user = null;
+            carModel.parkingSessions = new List<ParkingSessionModel>();
+
             await _ContextDb.Cars.AddAsync(carModel);
             await _ContextDb.SaveChangesAsync();
 
@@ -56,7 +67,15 @@ namespace Parking_Api.Services
             {
                 status = true,
                 message = "Машина успешно добавлена",
-                car = carModel
+                car = new
+                {
+                    carModel.id_car,
+                    carModel.license_plate,
+                    carModel.brand,
+                    carModel.model,
+                    carModel.color,
+                    carModel.user_id
+                }
             });
         }
 
