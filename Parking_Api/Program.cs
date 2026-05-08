@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Parking_Api.Data;
@@ -26,7 +26,6 @@ builder.Services.AddScoped<IParkingService, ParkingService>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
 builder.Services.AddScoped<IParkingSessionService, ParkingSessionService>();
 builder.Services.AddScoped<IReportService, ReportService>();
-builder.Services.AddHostedService<ParkingNotificationService>();
 
 
 var key = Encoding.UTF8.GetBytes("BRHejG4XOmf4iskeung1DvU4aLuN9QLHlxowUA6XWV8Qs5YvRcWCnjhezcK4Bijt");

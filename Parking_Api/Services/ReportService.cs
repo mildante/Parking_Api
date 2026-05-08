@@ -26,20 +26,11 @@ namespace Parking_Api.Services
 
             var complexes = await _contextDb.ParkingComplexes.ToListAsync();
             var spots = await _contextDb.ParkingSpots.ToListAsync();
-            var sessions = await _contextDb.ParkingSessions
-                .Include(x => x.parkingComplex)
-                .Where(x => x.entry_time >= periodStart)
-                .ToListAsync();
-            var activeSessions = await _contextDb.ParkingSessions
-                .Where(x => x.status == "Активна" && (x.exit_time == null || x.exit_time > now))
-                .ToListAsync();
-            var subscriptions = await _contextDb.Subscriptions
-                .Include(x => x.subscriptionPlan)
-                .ToListAsync();
+            var sessions = await _contextDb.ParkingSessions.Include(x => x.parkingComplex).Where(x => x.entry_time >= periodStart).ToListAsync();
+            var activeSessions = await _contextDb.ParkingSessions.Where(x => x.status == "Активна" && (x.exit_time == null || x.exit_time > now)).ToListAsync();
+            var subscriptions = await _contextDb.Subscriptions.Include(x => x.subscriptionPlan).ToListAsync();
 
-            var completedSessions = sessions
-                .Where(x => x.status == "Завершена" || (x.status == "Активна" && x.exit_time != null && x.exit_time <= now))
-                .ToList();
+            var completedSessions = sessions.Where(x => x.status == "Завершена" || (x.status == "Активна" && x.exit_time != null && x.exit_time <= now)).ToList();
 
             var totalParkingRevenue = sessions.Sum(GetParkingRevenue);
             var subscriptionRevenue = subscriptions
